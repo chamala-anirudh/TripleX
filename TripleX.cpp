@@ -2,7 +2,8 @@
 #include <ctime>
 using namespace std;
 
-void PrintIntroduction(int Difficulty) {
+void PrintIntroduction(int Difficulty)
+{
     cout << "\nYou are a secret agent breaking into a Level " << Difficulty;
     cout << " secure server room. \nYou need to enter the correct codes to continue..." << endl;
 }
@@ -29,16 +30,15 @@ bool PlayGame(int Difficulty)
     cin >> GuessA >> GuessB >> GuessC;
 
     GuessSum = GuessA + GuessB + GuessC;
-    GuessProduct = GuessA * GuessB * GuessC;
+    GuessProduct = GuessA * GuessB * GuessC;;
 
-    // cout << "The sum of your Guesses: " << GuessSum << endl;
-    // cout << "The product of your Guesses: " << GuessProduct << endl;
-
-    if (GuessSum == CodeSum && GuessProduct == CodeProduct) {
+    if (GuessSum == CodeSum && GuessProduct == CodeProduct)
+    {
         cout << "\nWell done agent, you have extracted a file, keep moving." << endl;
         return true;
     }
-    else {
+    else
+    {
         cout << "\nYou failed miserably and died horribly!!!" << endl;
         return false;
     }
@@ -50,10 +50,12 @@ int main()
     int DifficultyLevel = 1;
     const int MaxLevel = 5;
 
-    while(DifficultyLevel <= MaxLevel) {
+    while(DifficultyLevel <= MaxLevel)
+    {
         bool bLevelComplete = PlayGame(DifficultyLevel);
         cin.clear();
         cin.ignore();
+        
         if (bDifficultyLevel == true && Level == MaxLevel)
         {
             cout << "Good work agent, now get out of there!!";
