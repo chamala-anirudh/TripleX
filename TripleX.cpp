@@ -39,7 +39,7 @@ bool PlayGame(int Difficulty)
         return true;
     }
     else {
-        cout << "Careful agent, try again!!" << endl;
+        cout << "\nYou failed miserably and died horribly!!!" << endl;
         return false;
     }
 }
@@ -54,13 +54,19 @@ int main()
         bool bLevelComplete = PlayGame(DifficultyLevel);
         cin.clear();
         cin.ignore();
-
+        if (bDifficultyLevel == true && Level == MaxLevel)
+        {
+            cout << "Good work agent, now get out of there!!";
+        }
         if (bLevelComplete)
         {
             ++DifficultyLevel;
         }
+        else if (bDifficultyLevel == false)
+        {
+            break;
+        }
     }
     
-    cout << "Congratulations, you passed all levels!!" << endl;
     return 0;
 }
